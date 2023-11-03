@@ -1,0 +1,14 @@
+---
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleJob
+metadata:
+  name: ansible-job12-job
+  namespace: aap
+spec:
+  connection_secret: aapaccess
+  job_template_name: AWS Create
+  extra_vars: {
+  "region": "eu-central-1",
+  "name": "test1-ec2",
+  "instance_type": "t2.nano"
+}
